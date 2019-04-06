@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Environment/Car/Headlight.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Environment/Car/Interior/Interior.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Environment/Car/Radio/Radio.tscn" type="PackedScene" id=3]
+
+[node name="Car" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.446582, 1.10619, 1.77385 )
+
+[node name="Headlights" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="Left" parent="Headlights" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.6, 0 )
+
+[node name="Right" parent="Headlights" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.6, 0 )
+
+[node name="Interior" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.465901, 0.7, 1.5 )
+
+[node name="Radio" parent="Interior" instance=ExtResource( 3 )]
+transform = Transform( 0.1, 0, 6.3573e-09, 0, 0.1, 0, -6.3573e-09, 0, 0.1, -0.355468, 0.137508, 0.162641 )
+

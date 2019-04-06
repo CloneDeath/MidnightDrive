@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/Bush.vox-134c2225b4d42a1241e63290399af022.mesh"
+
+[deps]
+
+source_file="res://Environment/Highway/Bush.vox"
+dest_files=[ "res://.import/Bush.vox-134c2225b4d42a1241e63290399af022.mesh" ]
+
+[params]
+
+Scale=0.1

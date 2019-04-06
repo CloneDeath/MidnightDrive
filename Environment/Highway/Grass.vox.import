@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/Grass.vox-b771f031ae01678c85734824fc6dcbdb.mesh"
+
+[deps]
+
+source_file="res://Environment/Highway/Grass.vox"
+dest_files=[ "res://.import/Grass.vox-b771f031ae01678c85734824fc6dcbdb.mesh" ]
+
+[params]
+
+Scale=0.1

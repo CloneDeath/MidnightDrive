@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Headlight" type="SpotLight"]
+light_energy = 3.0
+spot_range = 15.0
+spot_angle = 25.0
+

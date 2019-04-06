@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/Tree.vox-1034c3d2abb3a19aea025d88a06fe1ab.mesh"
+
+[deps]
+
+source_file="res://Environment/Highway/Tree.vox"
+dest_files=[ "res://.import/Tree.vox-1034c3d2abb3a19aea025d88a06fe1ab.mesh" ]
+
+[params]
+
+Scale=0.1

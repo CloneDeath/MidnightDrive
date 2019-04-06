@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/Interior.vox-73c7078def5b003f986facd4e6077aff.mesh"
+
+[deps]
+
+source_file="res://Environment/Car/Interior/Interior.vox"
+dest_files=[ "res://.import/Interior.vox-73c7078def5b003f986facd4e6077aff.mesh" ]
+
+[params]
+
+Scale=0.01

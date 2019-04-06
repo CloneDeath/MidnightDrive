@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/Road.vox-ac738dd8ac714ef668ecd7a7b4030d31.mesh"
+
+[deps]
+
+source_file="res://Environment/Highway/Road.vox"
+dest_files=[ "res://.import/Road.vox-ac738dd8ac714ef668ecd7a7b4030d31.mesh" ]
+
+[params]
+
+Scale=0.1

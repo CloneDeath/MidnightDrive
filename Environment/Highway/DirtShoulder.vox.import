@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/DirtShoulder.vox-136e327882cf14bf41cd741d0e4e7fe6.mesh"
+
+[deps]
+
+source_file="res://Environment/Highway/DirtShoulder.vox"
+dest_files=[ "res://.import/DirtShoulder.vox-136e327882cf14bf41cd741d0e4e7fe6.mesh" ]
+
+[params]
+
+Scale=0.1
