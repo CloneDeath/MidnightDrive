@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/low-suspense.ogg-af776fa41ca896a8f5f4280574d018ce.oggstr"
+
+[deps]
+
+source_file="res://Music/low-suspense.ogg"
+dest_files=[ "res://.import/low-suspense.ogg-af776fa41ca896a8f5f4280574d018ce.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
