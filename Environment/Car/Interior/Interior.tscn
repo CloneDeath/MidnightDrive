@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Environment/Car/Interior/Interior.vox" type="ArrayMesh" id=1]
 [ext_resource path="res://Environment/Car/Interior/Wheel.vox" type="ArrayMesh" id=2]
+[ext_resource path="res://Environment/Car/Clock/Clock.tscn" type="PackedScene" id=3]
 
 [node name="Interior" type="Spatial"]
 
@@ -16,4 +17,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.297, 0.211, 0.139 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.205, 0 )
 mesh = ExtResource( 2 )
 material/0 = null
+
+[node name="Clock" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0.043102, 0.261785, 0.23061 )
 

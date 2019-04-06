@@ -1,27 +1,22 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Drive/Drive.gd" type="Script" id=1]
 [ext_resource path="res://Drive/Input/SteeringWheel.gd" type="Script" id=2]
 [ext_resource path="res://Drive/Events/RoadDrift.gd" type="Script" id=3]
 [ext_resource path="res://Environment/Car/Car.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Effects/Pixelize.shader" type="Shader" id=5]
-[ext_resource path="res://Effects/Sleepiness.shader" type="Shader" id=6]
-[ext_resource path="res://Environment/Highway/Horizon.png" type="Texture" id=7]
-[ext_resource path="res://Environment/Highway/Highway.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Effects/Sleepiness.shader" type="Shader" id=5]
+[ext_resource path="res://Environment/Highway/Horizon.png" type="Texture" id=6]
+[ext_resource path="res://Environment/Highway/Highway.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 250.0
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )
-shader_param/resolution = Vector2( 85, 50 )
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = ExtResource( 6 )
 shader_param/sleepiness = 0.0
 shader_param/zoom_factor = 1.25
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -61,20 +56,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
 
 [node name="Car" parent="CarHome" instance=ExtResource( 4 )]
 
-[node name="PixelizerLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
-
-[node name="Pixelizer" type="ColorRect" parent="PixelizerLayer"]
-material = SubResource( 2 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-
 [node name="SleepinessLayer" type="CanvasLayer" parent="."]
 editor/display_folded = true
+layer = 2
 
 [node name="Sleepiness" type="ColorRect" parent="SleepinessLayer"]
-material = SubResource( 3 )
+material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_clip_content = true
@@ -87,98 +74,98 @@ transform = Transform( 1.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.27948, -72.9744 )
 visible = false
 modulate = Color( 0.341176, 0.360784, 0.552941, 1 )
 pixel_size = 1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 hframes = 2
 
 [node name="Roads" type="Spatial" parent="Highway"]
 
-[node name="Highway" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway" parent="Highway/Roads" instance=ExtResource( 7 )]
 
-[node name="Highway2" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway2" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3 )
 
-[node name="Highway3" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway3" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
 
-[node name="Highway4" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway4" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9 )
 
-[node name="Highway5" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway5" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12 )
 
-[node name="Highway6" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway6" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15 )
 
-[node name="Highway7" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway7" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18 )
 
-[node name="Highway8" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway8" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21 )
 
-[node name="Highway9" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway9" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24 )
 
-[node name="Highway10" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway10" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27 )
 
-[node name="Highway11" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway11" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30 )
 
-[node name="Highway12" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway12" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33 )
 
-[node name="Highway13" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway13" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36 )
 
-[node name="Highway14" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway14" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -39 )
 
-[node name="Highway15" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway15" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -42 )
 
-[node name="Highway16" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway16" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45 )
 
-[node name="Highway17" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway17" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48 )
 
-[node name="Highway18" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway18" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -51 )
 
-[node name="Highway19" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway19" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -54 )
 
-[node name="Highway20" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway20" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -57 )
 
-[node name="Highway21" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway21" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60 )
 
-[node name="Highway22" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway22" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -63 )
 
-[node name="Highway23" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway23" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -66 )
 
-[node name="Highway24" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway24" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, -80 )
 
-[node name="Highway25" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway25" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, -110 )
 
-[node name="Highway26" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway26" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, -160 )
 
-[node name="Highway27" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway27" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 40, 0, 0, -280 )
 
-[node name="Highway28" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway28" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 80, 0, 0, -520 )
 
-[node name="Highway29" parent="Highway/Roads" instance=ExtResource( 8 )]
+[node name="Highway29" parent="Highway/Roads" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 160, 0, 0, -1000 )
 
 [node name="SleepLoop" type="AnimationPlayer" parent="."]
 playback_speed = 0.1
-anims/sleep_test = SubResource( 4 )
+anims/sleep_test = SubResource( 3 )
 

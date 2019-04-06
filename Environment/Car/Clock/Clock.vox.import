@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/Clock.vox-250dee6d1a605b32dd513de419252405.mesh"
+
+[deps]
+
+source_file="res://Environment/Car/Clock/Clock.vox"
+dest_files=[ "res://.import/Clock.vox-250dee6d1a605b32dd513de419252405.mesh" ]
+
+[params]
+
+Scale=0.01

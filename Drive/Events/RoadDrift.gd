@@ -20,7 +20,7 @@ func _ready():
 func _physics_process(delta):
 	if (!enabled): return;
 	update_drift(delta);
-	update_control(delta);
+	update_control();
 
 func update_drift(delta):
 	velocity += delta * (drift_acceleration * drift_direction);
@@ -31,7 +31,7 @@ func update_drift(delta):
 	get_car().rotation_degrees.y = -velocity*10;
 	get_car().steering_wheel = velocity * 5;
 
-func update_control(delta):
+func update_control():
 	if (get_wheel().is_pressed()):
 		randomize_direction();
 		var dp = -get_car().translation.x;

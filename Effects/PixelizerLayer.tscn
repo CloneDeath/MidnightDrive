@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Effects/Pixelize.shader" type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/resolution = Vector2( 85, 50 )
+
+[node name="PixelizerLayer" type="CanvasLayer"]
+editor/display_folded = true
+
+[node name="Pixelizer" type="ColorRect" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
