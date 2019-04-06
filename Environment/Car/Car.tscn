@@ -8,7 +8,7 @@
 [sub_resource type="Animation" id=1]
 resource_name = "ToRadio"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Camera:translation")
+tracks/0/path = NodePath("Interior/Camera:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -17,10 +17,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( -0.327754, 1.10619, 1.8522 ), Vector3( -0.0136135, 0.981805, 1.51876 ) ]
+"values": [ Vector3( 0.291841, 0.385691, -0.3062 ), Vector3( -0.0250683, 0.30976, -0.0304444 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Camera:rotation_degrees")
+tracks/1/path = NodePath("Interior/Camera:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -29,33 +29,33 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( -29.1769, 0, 0 ) ]
+"values": [ Vector3( 0, 180, 0 ), Vector3( -29.177, 180, 0 ) ]
 }
 
 [node name="Car" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.327754, 1.10619, 1.8522 )
-fov = 50.0
-
 [node name="Headlights" type="Spatial" parent="."]
-editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 
 [node name="Left" parent="Headlights" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.6, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0 )
 
 [node name="Right" parent="Headlights" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.6, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0 )
 
 [node name="Interior" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0359129, 0.7, 1.5 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0359129, 0.447101, 1.32335 )
 
 [node name="Radio" parent="Interior" instance=ExtResource( 4 )]
 transform = Transform( 0.1, 0, 6.3573e-09, 0, 0.1, 0, -6.3573e-09, 0, 0.1, -0.027878, 0.152361, 0.162641 )
 
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49708, 1.1644, 1.91501 )
+[node name="Camera" type="Camera" parent="Interior"]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0.291841, 0.385691, -0.3062 )
+fov = 50.0
+
+[node name="OmniLight" type="OmniLight" parent="Interior"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.176636, 0.399562, -0.290864 )
 light_energy = 0.25
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

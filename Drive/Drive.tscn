@@ -1,0 +1,177 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Drive/Drive.gd" type="Script" id=1]
+[ext_resource path="res://Drive/Input/SteeringWheel.gd" type="Script" id=2]
+[ext_resource path="res://Drive/Events/RoadDrift.gd" type="Script" id=3]
+[ext_resource path="res://Environment/Car/Car.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Effects/Pixelize.shader" type="Shader" id=5]
+[ext_resource path="res://Effects/Sleepiness.shader" type="Shader" id=6]
+[ext_resource path="res://Environment/Highway/Highway.tscn" type="PackedScene" id=7]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 250.0
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 5 )
+shader_param/resolution = Vector2( 85, 50 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 6 )
+shader_param/sleepiness = 0.0
+shader_param/zoom_factor = 1.25
+
+[sub_resource type="Animation" id=3]
+resource_name = "sleep_test"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spatial2/SleepinessLayer/Sleepiness:material:shader_param/sleepiness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 0.0 ]
+}
+
+[node name="Drive" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Input" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="SteeringWheel" type="Area2D" parent="Input"]
+editor/display_folded = true
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Input/SteeringWheel"]
+position = Vector2( 500, 550 )
+shape = SubResource( 4 )
+
+[node name="Events" type="Node" parent="."]
+
+[node name="RoadDrift" type="Node" parent="Events"]
+script = ExtResource( 3 )
+
+[node name="CarHome" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+
+[node name="Car" parent="CarHome" instance=ExtResource( 4 )]
+
+[node name="PixelizerLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="Pixelizer" type="ColorRect" parent="PixelizerLayer"]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="SleepinessLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="Sleepiness" type="ColorRect" parent="SleepinessLayer"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+mouse_filter = 2
+
+[node name="Highway" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="Highway" parent="Highway" instance=ExtResource( 7 )]
+
+[node name="Highway2" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3 )
+
+[node name="Highway3" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
+
+[node name="Highway4" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9 )
+
+[node name="Highway5" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12 )
+
+[node name="Highway6" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15 )
+
+[node name="Highway7" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18 )
+
+[node name="Highway8" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21 )
+
+[node name="Highway9" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24 )
+
+[node name="Highway10" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27 )
+visible = false
+
+[node name="Highway11" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30 )
+visible = false
+
+[node name="Highway12" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33 )
+visible = false
+
+[node name="Highway13" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36 )
+visible = false
+
+[node name="Highway14" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -39 )
+visible = false
+
+[node name="Highway15" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -42 )
+visible = false
+
+[node name="Highway16" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45 )
+visible = false
+
+[node name="Highway17" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48 )
+visible = false
+
+[node name="Highway18" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -51 )
+visible = false
+
+[node name="Highway19" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -54 )
+visible = false
+
+[node name="Highway20" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -57 )
+visible = false
+
+[node name="Highway21" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60 )
+visible = false
+
+[node name="Highway22" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -63 )
+visible = false
+
+[node name="Highway23" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -66 )
+visible = false
+
+[node name="Highway24" parent="Highway" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -69 )
+visible = false
+
+[node name="SleepLoop" type="AnimationPlayer" parent="."]
+playback_speed = 0.1
+anims/sleep_test = SubResource( 3 )
+
+[connection signal="is_pressed" from="Input/SteeringWheel" to="Events/RoadDrift" method="_on_SteeringWheel_is_pressed"]
