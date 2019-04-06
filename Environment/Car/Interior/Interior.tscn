@@ -9,8 +9,11 @@
 mesh = ExtResource( 1 )
 material/0 = null
 
-[node name="Wheel" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296748, 0.0059638, 0.13945 )
+[node name="SteeringWheel" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.297, 0.211, 0.139 )
+
+[node name="Wheel" type="MeshInstance" parent="SteeringWheel"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.205, 0 )
 mesh = ExtResource( 2 )
 material/0 = null
 

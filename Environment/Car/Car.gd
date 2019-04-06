@@ -11,3 +11,6 @@ func _input(event):
 		else:
 			$AnimationPlayer.play_backwards("ToRadio");
 			at_radio = false;
+
+func _process(_delta):
+	$Interior/SteeringWheel.rotation_degrees.z = translation.x * 5;

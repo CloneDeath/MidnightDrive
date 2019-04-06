@@ -1,16 +1,13 @@
 extends Area2D
 
-signal is_pressed();
-
-func _physics_process(_delta):
-	if (Input.is_action_pressed("ui_accept") && mouse_overlaps()):
-		emit_signal("is_pressed");
-
+func is_pressed():
+	return Input.is_action_pressed("ui_accept") && mouse_overlaps();
+	
 func mouse_overlaps():
 	var space = get_world_2d().direct_space_state;
 	var mouse = get_global_mouse_position();
-	var collision = space.intersect_point(mouse,32,[ ],0xFFFF,true,true);
-	print(collision);
+	var canvas = get_parent() as CanvasLayer;
+	var collision = space.intersect_point_on_canvas(mouse, canvas.get_instance_id(), 32,[],0xFFFF,true,true);
 	for hit in collision:
 		if (hit.collider == self): return true;
 	return false;
