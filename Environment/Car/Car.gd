@@ -1,6 +1,7 @@
 extends Spatial
 
 var at_radio = false;
+var steering_wheel = 0;
 
 func _input(event):
 	return;
@@ -13,4 +14,4 @@ func _input(event):
 			at_radio = false;
 
 func _process(_delta):
-	$Interior/SteeringWheel.rotation_degrees.z = translation.x * 5;
+	$Interior/SteeringWheel.rotation_degrees.z = steering_wheel;

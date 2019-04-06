@@ -2,9 +2,14 @@ extends Node
 
 export var enabled = false;
 var velocity = 0;
-var direction = -1;
 
-const correction_speed = 1.0;
+const max_velocity = 3.0;
+
+const correction_acceleration = 1.0;
+var correction_amount = 0;
+
+const drift_acceleration = 0.1;
+var drift_direction = -1;
 
 func get_car() -> Spatial: return get_node("../../CarHome/Car") as Spatial;
 func get_wheel(): return get_node("../../Input/SteeringWheel");
@@ -18,20 +23,22 @@ func _physics_process(delta):
 	update_control(delta);
 
 func update_drift(delta):
-	velocity -= delta * 0.01;
-	get_car().translation.x += velocity * delta * direction;
+	velocity += delta * (drift_acceleration * drift_direction);
+	velocity += delta * (correction_amount * correction_acceleration);
+	velocity = clamp(velocity, -max_velocity, max_velocity);
+	
+	get_car().translation.x += velocity * delta;
+	get_car().rotation_degrees.y = -velocity*10;
+	get_car().steering_wheel = velocity * 5;
 
 func update_control(delta):
-	if (!get_wheel().is_pressed()): return;
-	randomize_direction();
-	velocity = 0;
-	
-	var fix_dir = -sign(get_car().translation.x);
-	var distance = correction_speed * delta;
-	if (distance > abs(get_car().translation.x)):
-		get_car().translation.x = 0;
+	if (get_wheel().is_pressed()):
+		randomize_direction();
+		var dp = -get_car().translation.x;
+		correction_amount = clamp(dp - velocity, -1, 1);
 	else:
-		get_car().translation.x += distance * fix_dir;
+		correction_amount = 0;
+	
 
 func randomize_direction():
-	direction = [-1, 1][randi()%2];
+	drift_direction = [-1, 1][randi()%2];
