@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/RadioStation.vox-bf22184e546c378690ec06ea8335cade.mesh"
+
+[deps]
+
+source_file="res://Environment/Car/Radio/RadioStation.vox"
+dest_files=[ "res://.import/RadioStation.vox-bf22184e546c378690ec06ea8335cade.mesh" ]
+
+[params]
+
+Scale=0.05

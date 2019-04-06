@@ -24,7 +24,7 @@ func get_preset_count():
 
 func get_preset_name(preset):
 	return 'Default'
-	
+
 func get_import_options(preset):
 	return [
 		{
@@ -43,14 +43,14 @@ func import(source_path, destination_path, options, platforms, gen_files):
 	if options.Scale:
 		scale = float(options.Scale)
 	print('Vox Importer: scale: ', scale)
-	
+
 	var file = File.new()
 	var err = file.open(source_path, File.READ)
 
 	if err != OK:
 		if file.is_open(): file.close()
 		return err
-	
+
 	var identifier = PoolByteArray([ file.get_8(), file.get_8(), file.get_8(), file.get_8() ]).get_string_from_ascii()
 	var version = file.get_32()
 	var voxels = {}
@@ -90,7 +90,7 @@ func import(source_path, destination_path, options, platforms, gen_files):
 						colors.append(Color(r, g, b, a))
 				_:
 						file.get_buffer(chunkSize)
-		
+
 		if voxels.size() == 0: return voxels
 	file.close()
 
@@ -108,14 +108,14 @@ func import(source_path, destination_path, options, platforms, gen_files):
 		if not voxels.has(Vector3(voxel.x + 1, voxel.y, voxel.z)): voxelSides += right
 		if not voxels.has(Vector3(voxel.x, voxel.y, voxel.z + 1)): voxelSides += front
 		if not voxels.has(Vector3(voxel.x, voxel.y, voxel.z - 1)): voxelSides += back
-		
+
 		st.add_color(colors[voxels[voxel]])
 
 		for t in voxelSides:
 			st.add_vertex(((t * 0.5) + voxel - diffVector) * scale)
-		
+
 	st.generate_normals()
-	
+
 	var material = SpatialMaterial.new()
 	material.vertex_color_is_srgb = true
 	material.vertex_color_use_as_albedo = true
@@ -130,7 +130,7 @@ func import(source_path, destination_path, options, platforms, gen_files):
 		mesh = st.commit(old_mesh)
 	else:
 		mesh = st.commit()
-	
+
 	var full_path = "%s.%s" % [ destination_path, get_save_extension() ]
 	return ResourceSaver.save(full_path, mesh)
 
@@ -138,7 +138,7 @@ var top = [
 	Vector3( 1.0000, 1.0000, 1.0000),
 	Vector3(-1.0000, 1.0000, 1.0000),
 	Vector3(-1.0000, 1.0000,-1.0000),
-	
+
 	Vector3(-1.0000, 1.0000,-1.0000),
 	Vector3( 1.0000, 1.0000,-1.0000),
 	Vector3( 1.0000, 1.0000, 1.0000),
@@ -148,7 +148,7 @@ var bottom = [
 	Vector3(-1.0000,-1.0000,-1.0000),
 	Vector3(-1.0000,-1.0000, 1.0000),
 	Vector3( 1.0000,-1.0000, 1.0000),
-	
+
 	Vector3( 1.0000, -1.0000, 1.0000),
 	Vector3( 1.0000, -1.0000,-1.0000),
 	Vector3(-1.0000, -1.0000,-1.0000),
@@ -158,7 +158,7 @@ var front = [
 	Vector3(-1.0000, 1.0000, 1.0000),
 	Vector3( 1.0000, 1.0000, 1.0000),
 	Vector3( 1.0000,-1.0000, 1.0000),
-	
+
 	Vector3( 1.0000,-1.0000, 1.0000),
 	Vector3(-1.0000,-1.0000, 1.0000),
 	Vector3(-1.0000, 1.0000, 1.0000),
@@ -168,7 +168,7 @@ var back = [
 	Vector3( 1.0000,-1.0000,-1.0000),
 	Vector3( 1.0000, 1.0000,-1.0000),
 	Vector3(-1.0000, 1.0000,-1.0000),
-	
+
 	Vector3(-1.0000, 1.0000,-1.0000),
 	Vector3(-1.0000,-1.0000,-1.0000),
 	Vector3( 1.0000,-1.0000,-1.0000)
@@ -178,7 +178,7 @@ var left = [
 	Vector3(-1.0000, 1.0000, 1.0000),
 	Vector3(-1.0000,-1.0000, 1.0000),
 	Vector3(-1.0000,-1.0000,-1.0000),
-	
+
 	Vector3(-1.0000,-1.0000,-1.0000),
 	Vector3(-1.0000, 1.0000,-1.0000),
 	Vector3(-1.0000, 1.0000, 1.0000),
@@ -188,7 +188,7 @@ var right = [
 	Vector3( 1.0000, 1.0000, 1.0000),
 	Vector3( 1.0000, 1.0000,-1.0000),
 	Vector3( 1.0000,-1.0000,-1.0000),
-	
+
 	Vector3( 1.0000,-1.0000,-1.0000),
 	Vector3( 1.0000,-1.0000, 1.0000),
 	Vector3( 1.0000, 1.0000, 1.0000),

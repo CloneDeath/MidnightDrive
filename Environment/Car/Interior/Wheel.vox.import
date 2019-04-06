@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Wheel.vox-e0a5c200e5d16758282647c49a8cef59.mesh" ]
 
 [params]
 
-Scale=0.1
+Scale=0.01
