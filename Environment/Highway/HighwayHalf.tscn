@@ -26,7 +26,7 @@ mesh = ExtResource( 4 )
 material/0 = null
 
 [node name="Tree" type="MeshInstance" parent="."]
-transform = Transform( -1.99833, 0, 0.0816245, 0, 2, 0, -0.0816245, 0, -1.99833, 10.175, 0.602307, -0.474057 )
+transform = Transform( -1.41911, 0, 1.4093, 0, 2, 0, -1.4093, 0, -1.41911, 10.175, 0.602307, -0.474057 )
 mesh = ExtResource( 5 )
 material/0 = null
 
