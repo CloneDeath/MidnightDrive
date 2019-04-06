@@ -12,7 +12,7 @@ shader_param/resolution = Vector2( 85, 50 )
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
 shader_param/sleepiness = 0.5
-shader_param/zoom_factor = 2.0
+shader_param/zoom_factor = 1.25
 
 [sub_resource type="Animation" id=3]
 resource_name = "sleep_test"
@@ -127,5 +127,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -69 )
 
 [node name="SleepLoop" type="AnimationPlayer" parent="."]
 autoplay = "sleep_test"
+playback_speed = 0.1
 anims/sleep_test = SubResource( 3 )
 
