@@ -8,7 +8,8 @@ class LevelInfo:
 	var scene_name = "res://Levels/Level01.tscn"
 
 var levels = [
-	LevelInfo.new("level01", "res://Levels/Level01.tscn")
+	LevelInfo.new("level01", "res://Levels/Level01.tscn"),
+	LevelInfo.new("you_win", "res://Levels/YouWin.tscn")
 ];
 var current_level = 0;
 
@@ -30,6 +31,7 @@ func load_level():
 	var level_scene = load(level_name);
 	var level = level_scene.instance();
 	level.connect("player_lost", self, "player_lost");
+	level.connect("player_won", self, "player_won");
 	$CurrentLevel.add_child(level);
 
 func clear_level():
@@ -39,6 +41,10 @@ func clear_level():
 func player_lost():
 	clear_level();
 	$Animation.play("death_pause");
+
+func player_won():
+	clear_level();
+	start_level(current_level + 1);
 
 func restart_level():
 	start_level(current_level);

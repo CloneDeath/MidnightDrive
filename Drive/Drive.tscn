@@ -53,7 +53,6 @@ editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="CarHome" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
 
 [node name="Car" parent="CarHome" instance=ExtResource( 4 )]
@@ -70,6 +69,7 @@ rect_clip_content = true
 mouse_filter = 2
 
 [node name="Highway" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Highway"]
 transform = Transform( 1.4, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.27948, -72.9744 )

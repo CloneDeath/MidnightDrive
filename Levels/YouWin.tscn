@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/YouWin/YouWin.gd" type="Script" id=1]
+[ext_resource path="res://Levels/YouWin/Beach.vox" type="ArrayMesh" id=2]
+
+[sub_resource type="ProceduralSky" id=1]
+sky_energy = 2.0
+ground_bottom_color = Color( 0.0196078, 0.219608, 1, 1 )
+ground_horizon_color = Color( 0.0196078, 0.219608, 1, 1 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_sky_contribution = 0.5
+
+[node name="YouWin" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Beach" type="MeshInstance" parent="."]
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1, 0, -8.74228e-008, -1.70658e-008, 0.980761, 0.19521, 8.57409e-008, 0.19521, -0.980761, 0, 1.92833, -3.67911 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+

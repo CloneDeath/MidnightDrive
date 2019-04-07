@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/Beach.vox-ceb959b9ca69e7442a846808a85eba91.mesh"
+
+[deps]
+
+source_file="res://Levels/YouWin/Beach.vox"
+dest_files=[ "res://.import/Beach.vox-ceb959b9ca69e7442a846808a85eba91.mesh" ]
+
+[params]
+
+Scale=0.1
