@@ -1,14 +1,14 @@
 extends Node
 
-export var enabled = false;
+export var enabled = true;
 
 func get_radio(): return get_node("../../Input/Radio");
 func get_car() -> Spatial: return get_node("../../CarHome/Car") as Spatial;
 
 var sleepiness = 0;
 var sleepiness_velocity = 0;
-var sleepiness_acceleration = 0.1;
-var max_sleepiness = 20;
+export var sleepiness_acceleration = 0.1;
+export var max_sleepiness = 20;
 
 func _process(delta):
 	if (!enabled): return;

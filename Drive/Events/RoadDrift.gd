@@ -1,6 +1,6 @@
 extends Node
 
-export var enabled = false;
+export var enabled = true;
 var velocity = 0;
 
 const max_velocity = 3.0;
@@ -8,7 +8,7 @@ const max_velocity = 3.0;
 const correction_acceleration = 1.0;
 var correction_amount = 0;
 
-const drift_acceleration = 0.1;
+export var drift_acceleration = 0.1;
 var drift_direction = -1;
 
 func get_car() -> Spatial: return get_node("../../CarHome/Car") as Spatial;
