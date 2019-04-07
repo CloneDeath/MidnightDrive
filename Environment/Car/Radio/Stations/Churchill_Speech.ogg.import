@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Churchill_Speech.ogg-d3868751087a85eb985efed82595e3af.oggstr"
+
+[deps]
+
+source_file="res://Environment/Car/Radio/Stations/Churchill_Speech.ogg"
+dest_files=[ "res://.import/Churchill_Speech.ogg-d3868751087a85eb985efed82595e3af.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

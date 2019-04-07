@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Environment/Car/Radio/Radio.gd" type="Script" id=1]
 [ext_resource path="res://Environment/Car/Radio/Radio.vox" type="ArrayMesh" id=2]
 [ext_resource path="res://Environment/Car/Radio/RadioStation.vox" type="ArrayMesh" id=3]
 [ext_resource path="res://Environment/Car/Radio/Sound/RadioTuning.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Environment/Car/Radio/Stations/Churchill_Speech.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Environment/Car/Radio/Stations/Churchill_The_German_Ambassador.ogg" type="AudioStream" id=6]
 
 [node name="Radio" type="Spatial"]
 script = ExtResource( 1 )
@@ -22,5 +24,15 @@ material/0 = null
 
 [node name="Tuning" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Stations" type="Node" parent="."]
+
+[node name="Speech" type="AudioStreamPlayer" parent="Stations"]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="Ambassador" type="AudioStreamPlayer" parent="Stations"]
+stream = ExtResource( 6 )
 autoplay = true
 
