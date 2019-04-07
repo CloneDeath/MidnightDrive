@@ -67,7 +67,7 @@ func import(source_path, destination_path, options, platforms, gen_files):
 
 			match chunkId:
 				'SIZE':
-					sizeX = file.get_32()
+					sizeX = -file.get_32()
 					sizeY = file.get_32()
 					sizeZ = file.get_32()
 					print('size: ', sizeX, ', ', sizeY, ', ', sizeZ)
@@ -78,7 +78,7 @@ func import(source_path, destination_path, options, platforms, gen_files):
 						var z = file.get_8()
 						var y = file.get_8()
 						var c = file.get_8()
-						var voxel = Vector3(x, y, z)
+						var voxel = Vector3(-x, y, z)
 						voxels[voxel] = c - 1
 				'RGBA':
 					colors = []

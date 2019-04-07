@@ -36,6 +36,7 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="Input" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="SteeringWheel" type="Area2D" parent="Input"]
 editor/display_folded = true
@@ -46,6 +47,7 @@ position = Vector2( 500, 550 )
 shape = SubResource( 1 )
 
 [node name="Events" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="RoadDrift" type="Node" parent="Events"]
 script = ExtResource( 3 )

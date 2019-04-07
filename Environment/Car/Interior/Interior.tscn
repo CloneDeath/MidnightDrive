@@ -19,5 +19,5 @@ mesh = ExtResource( 2 )
 material/0 = null
 
 [node name="Clock" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0.043102, 0.261785, 0.23061 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043102, 0.255458, 0.238024 )
 
