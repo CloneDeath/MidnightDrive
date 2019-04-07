@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Environment/Car/Radio/Radio.gd" type="Script" id=1]
 [ext_resource path="res://Environment/Car/Radio/Radio.vox" type="ArrayMesh" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://Environment/Car/Radio/Stations/Churchill_Speech.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Environment/Car/Radio/Stations/Churchill_The_German_Ambassador.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Environment/Car/Radio/Stations/MapleLeafRag.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Environment/Car/Radio/Stations/DeclarationofWarAgainstJapan.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Environment/Car/Radio/Stations/RhapBlue.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Environment/Car/Radio/Stations/Robot_Gypsy_Jazz.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Environment/Car/Radio/Stations/Tendresse.ogg" type="AudioStream" id=11]
 
 [node name="Radio" type="Spatial"]
 script = ExtResource( 1 )
@@ -39,6 +43,24 @@ autoplay = true
 
 [node name="MapleLeafRag" type="AudioStreamPlayer" parent="Stations"]
 stream = ExtResource( 7 )
+volume_db = -5.0
+autoplay = true
+
+[node name="Japan" type="AudioStreamPlayer" parent="Stations"]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="Blue" type="AudioStreamPlayer" parent="Stations"]
+stream = ExtResource( 9 )
+autoplay = true
+
+[node name="Jazz" type="AudioStreamPlayer" parent="Stations"]
+stream = ExtResource( 10 )
+volume_db = -15.0
+autoplay = true
+
+[node name="Tendresse" type="AudioStreamPlayer" parent="Stations"]
+stream = ExtResource( 11 )
 volume_db = -5.0
 autoplay = true
 

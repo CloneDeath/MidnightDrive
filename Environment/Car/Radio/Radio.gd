@@ -7,10 +7,10 @@ var previous_station = -1;
 var sleepiness = 0;
 
 func _ready():
-	pick_new_station();
 	randomize_stream_position($Tuning);
 	for child in $Stations.get_children():
 		randomize_stream_position(child);
+	pick_new_station();
 
 func randomize_stream_position(audio):
 	var length = audio.stream.get_length();

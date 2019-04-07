@@ -10,6 +10,7 @@ class LevelInfo:
 var levels = [
 	LevelInfo.new("level01", "res://Levels/Level01.tscn"),
 	LevelInfo.new("level02", "res://Levels/Level02.tscn"),
+	LevelInfo.new("level03", "res://Levels/Level03.tscn"),
 	LevelInfo.new("you_win", "res://Levels/YouWin.tscn")
 ];
 var current_level = 0;

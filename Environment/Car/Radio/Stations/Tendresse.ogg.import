@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Tendresse.ogg-252898fab4573ce9f6fbcfaa057d864d.oggstr"
+
+[deps]
+
+source_file="res://Environment/Car/Radio/Stations/Tendresse.ogg"
+dest_files=[ "res://.import/Tendresse.ogg-252898fab4573ce9f6fbcfaa057d864d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

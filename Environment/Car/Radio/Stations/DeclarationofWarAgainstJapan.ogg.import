@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DeclarationofWarAgainstJapan.ogg-ba6ae706694472f592c49f8e0b70e4cd.oggstr"
+
+[deps]
+
+source_file="res://Environment/Car/Radio/Stations/DeclarationofWarAgainstJapan.ogg"
+dest_files=[ "res://.import/DeclarationofWarAgainstJapan.ogg-ba6ae706694472f592c49f8e0b70e4cd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

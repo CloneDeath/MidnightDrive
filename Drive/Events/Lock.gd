@@ -4,6 +4,9 @@ export var enabled = true;
 export var unlock_period = 20;
 export var kill_max = 30;
 
+export var unlock_variance = 0;
+export var kill_variance = 0;
+
 var kill_triggered = false;
 
 var kill_time = 0;
@@ -12,6 +15,10 @@ var unlock_time = 0;
 func get_car() -> Spatial: return get_node("../../CarHome/Car") as Spatial;
 func get_mode(): return get_node("../../Input").mode;
 func get_lock_input(): return get_node("../../Input/LockDoor");
+
+func _ready():
+	kill_time = rand_range(0, kill_variance);
+	unlock_time = rand_range(0, unlock_variance);
 
 func _process(delta):
 	if (!enabled): return;
@@ -32,7 +39,7 @@ func check_locks(delta):
 	var car = get_car();
 	if unlock_time > unlock_period:
 		car.set_lock(false);
-		unlock_time = 0;
+		unlock_time = rand_range(0, unlock_variance);
 	
 	var lock_input = get_lock_input();
 	if (lock_input.is_just_pressed()):

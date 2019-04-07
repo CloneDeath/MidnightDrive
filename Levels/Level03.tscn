@@ -2,20 +2,20 @@
 
 [ext_resource path="res://Drive/Drive.tscn" type="PackedScene" id=1]
 
-[node name="Level01" index="0" instance=ExtResource( 1 )]
-time_max = 120
+[node name="Level03" index="0" instance=ExtResource( 1 )]
+time_max = 240
 
 [node name="Input" parent="." index="0"]
 editor/display_folded = true
 
 [node name="RoadDrift" parent="Events" index="0"]
-drift_acceleration = 0.05
+drift_acceleration = 0.2
 
 [node name="Sleepiness" parent="Events" index="1"]
-sleepiness_acceleration = 0.01
-max_sleepiness = 40
+max_sleepiness = 10
 
 [node name="Lock" parent="Events" index="2"]
-unlock_period = 60
-unlock_variance = 20
+kill_max = 15
+unlock_variance = 15
+kill_variance = 10
 

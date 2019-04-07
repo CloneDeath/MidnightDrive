@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/RhapBlue.ogg-a3721f0ebcf77aa9de6d7b8ebb3f93ed.oggstr"
+
+[deps]
+
+source_file="res://Environment/Car/Radio/Stations/RhapBlue.ogg"
+dest_files=[ "res://.import/RhapBlue.ogg-a3721f0ebcf77aa9de6d7b8ebb3f93ed.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
