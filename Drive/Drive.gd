@@ -4,12 +4,14 @@ signal player_lost();
 signal player_won();
 
 export var RoadDrift = true;
+export var Sleepiness = true;
 var time = 0;
 var time_max = 60;
 var win_triggered = false;
 
 func _ready():
 	$Events/RoadDrift.enabled = RoadDrift;
+	$Events/Sleepiness.enabled = Sleepiness;
 
 func _process(delta):
 	detect_loss();

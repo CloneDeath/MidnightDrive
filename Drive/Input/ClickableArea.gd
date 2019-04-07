@@ -1,7 +1,12 @@
 extends Area2D
 
+var enabled = true;
+
 func is_pressed():
-	return Input.is_action_pressed("ui_accept") && mouse_overlaps();
+	return enabled && Input.is_action_pressed("ui_accept") && mouse_overlaps();
+
+func is_just_pressed():
+	return enabled && Input.is_action_just_pressed("ui_accept") && mouse_overlaps();
 	
 func mouse_overlaps():
 	var space = get_world_2d().direct_space_state;
