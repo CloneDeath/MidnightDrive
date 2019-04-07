@@ -19,6 +19,9 @@ func go_to_window():
 func go_to_drive_from_window():
 	$Animation.play_backwards("ToWindow");
 
+func play_window_kill():
+	$Animation.play("window_kill");
+
 func adjust_radio(enable, sleepiness):
 	$Interior/Radio.adjust_radio(enable, sleepiness);
 

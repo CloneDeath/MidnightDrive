@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/NeckSnap.ogg-32fb4338258f92572f1f5704122d4f8c.oggstr"
+
+[deps]
+
+source_file="res://Drive/Events/Lock/NeckSnap.ogg"
+dest_files=[ "res://.import/NeckSnap.ogg-32fb4338258f92572f1f5704122d4f8c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0.05
