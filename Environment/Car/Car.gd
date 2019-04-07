@@ -4,6 +4,8 @@ var steering_wheel = 0;
 
 func _process(_delta):
 	$Interior/SteeringWheel.rotation_degrees.z = steering_wheel;
+	$Audio.volume_db = abs(steering_wheel);
+	$Audio.pitch_scale = 1 + abs(steering_wheel / 16);
 
 func go_to_radio():
 	$Animation.play("ToRadio");

@@ -4,7 +4,7 @@ signal player_lost();
 signal player_won();
 
 var time = 0;
-var time_max = 60;
+export var time_max = 60;
 var win_triggered = false;
 
 func _process(delta):

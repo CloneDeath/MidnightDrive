@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Driving.ogg-6b59ba53c1b9186a5e8cc6c79e5429f2.oggstr"
+
+[deps]
+
+source_file="res://Environment/Car/Sound/Driving.ogg"
+dest_files=[ "res://.import/Driving.ogg-6b59ba53c1b9186a5e8cc6c79e5429f2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
