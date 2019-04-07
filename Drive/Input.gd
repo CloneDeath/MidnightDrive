@@ -14,6 +14,7 @@ func _process(_delta):
 	$GoToDriveFromRadio.enabled = mode == "radio" && !animating;
 	$GoToWindow.enabled = mode == "driving" && !animating;
 	$GoToDriveFromWindow.enabled = mode == "window" && !animating;
+	$LockDoor.enabled = mode == "window";
 	if ($GoToRadio.is_just_pressed()):
 		mode = "radio";
 		car.go_to_radio();

@@ -25,5 +25,11 @@ func play_window_kill():
 func adjust_radio(enable, sleepiness):
 	$Interior/Radio.adjust_radio(enable, sleepiness);
 
+func set_lock(enabled):
+	$Interior/Lock.set_lock(enabled);
+
+func is_locked():
+	return $Interior/Lock.is_locked();
+
 func animation_is_playing():
 	return $Animation.is_playing();

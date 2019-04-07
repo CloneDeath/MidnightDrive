@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/Lock.vox-db73c2d906d585a9a05ff6d232649bd0.mesh"
+
+[deps]
+
+source_file="res://Environment/Car/Lock/Lock.vox"
+dest_files=[ "res://.import/Lock.vox-db73c2d906d585a9a05ff6d232649bd0.mesh" ]
+
+[params]
+
+Scale=0.01

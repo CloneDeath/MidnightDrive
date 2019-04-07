@@ -107,7 +107,7 @@ transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, -0.03
 transform = Transform( 0.1, 0, 6.3573e-009, 0, 0.1, 0, -6.3573e-009, 0, 0.1, -0.027878, 0.152361, 0.162641 )
 
 [node name="Camera" type="Camera" parent="Interior"]
-transform = Transform( -1, 0, 1.50996e-007, 0, 1, 0, -1.50996e-007, 0, -1, 0.291841, 0.385691, -0.3062 )
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0.291841, 0.385691, -0.3062 )
 fov = 50.0
 far = 1000.0
 
@@ -120,7 +120,7 @@ playback_speed = 2.0
 anims/ToRadio = SubResource( 1 )
 anims/ToWindow = SubResource( 2 )
 anims/window_kill = SubResource( 3 )
-blend_times = [ "ToRadio", "window_kill", 0.1, "ToWindow", "window_kill", 0.1 ]
+blend_times = [ "ToRadio", "window_kill", 0.1, "ToWindow", "window_kill", 0.1, "window_kill", "ToRadio", 0.1, "window_kill", "ToWindow", 0.1 ]
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
