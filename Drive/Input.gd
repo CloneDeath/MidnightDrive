@@ -3,18 +3,22 @@ extends CanvasLayer
 var mode = "driving";
 
 func get_car(): return get_node("../CarHome/Car");
+func get_sleepiness(): return get_node("../Events/Sleepiness");
 
 func _process(_delta):
+	var sleepiness = get_sleepiness();
+	var asleep = sleepiness.sleepiness >= sleepiness.max_sleepiness;
+	
 	var car = get_car();
 	var animating = car.animation_is_playing();
 	
-	$SteeringWheel.enabled = mode == "driving";
-	$GoToRadio.enabled = mode == "driving" && !animating;
-	$Radio.enabled = mode == "radio";
-	$GoToDriveFromRadio.enabled = mode == "radio" && !animating;
-	$GoToWindow.enabled = mode == "driving" && !animating;
-	$GoToDriveFromWindow.enabled = mode == "window" && !animating;
-	$LockDoor.enabled = mode == "window";
+	$SteeringWheel.enabled = mode == "driving" && !asleep;
+	$GoToRadio.enabled = mode == "driving" && !animating && !asleep;
+	$Radio.enabled = mode == "radio" && !asleep;
+	$GoToDriveFromRadio.enabled = mode == "radio" && !animating && !asleep;
+	$GoToWindow.enabled = mode == "driving" && !animating && !asleep;
+	$GoToDriveFromWindow.enabled = mode == "window" && !animating && !asleep;
+	$LockDoor.enabled = mode == "window" && !asleep;
 	if ($GoToRadio.is_just_pressed()):
 		mode = "radio";
 		car.go_to_radio();
