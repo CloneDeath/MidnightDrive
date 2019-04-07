@@ -14,6 +14,7 @@ var levels = [
 var current_level = 0;
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	start_level(0);
 
 func _process(_delta):

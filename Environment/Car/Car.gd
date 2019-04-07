@@ -11,5 +11,14 @@ func go_to_radio():
 func go_to_drive_from_radio():
 	$Animation.play_backwards("ToRadio");
 
+func go_to_window():
+	$Animation.play("ToWindow");
+
+func go_to_drive_from_window():
+	$Animation.play_backwards("ToWindow");
+
 func adjust_radio(delta):
 	$Interior/Radio.adjust_radio(delta);
+
+func animation_is_playing():
+	return $Animation.is_playing();

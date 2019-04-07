@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Environment/Car/Car.gd" type="Script" id=1]
 [ext_resource path="res://Environment/Car/Headlight.tscn" type="PackedScene" id=2]
@@ -32,6 +32,33 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 180, 0 ), Vector3( -29.177, 180, 0 ) ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "ToWindow"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Interior/Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.291841, 0.385691, -0.3062 ), Vector3( 0.291841, 0.385691, -0.3062 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Interior/Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -180, 0 ), Vector3( -6.719, -130.104, -1.241 ) ]
+}
+
 [node name="Car" type="Spatial"]
 script = ExtResource( 1 )
 
@@ -51,7 +78,7 @@ transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, -0.03
 transform = Transform( 0.1, 0, 6.3573e-009, 0, 0.1, 0, -6.3573e-009, 0, 0.1, -0.027878, 0.152361, 0.162641 )
 
 [node name="Camera" type="Camera" parent="Interior"]
-transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0.291841, 0.385691, -0.3062 )
+transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, 0.291841, 0.385691, -0.3062 )
 fov = 50.0
 far = 1000.0
 
@@ -60,5 +87,7 @@ transform = Transform( -1, 0, 8.74228e-008, 0, 1, 0, -8.74228e-008, 0, -1, -0.17
 light_energy = 0.25
 
 [node name="Animation" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
 anims/ToRadio = SubResource( 1 )
+anims/ToWindow = SubResource( 2 )
 
