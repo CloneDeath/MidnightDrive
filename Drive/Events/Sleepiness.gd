@@ -25,7 +25,7 @@ func update_sleepiness(delta):
 func check_radio(delta):
 	var radio = get_radio();
 	var car = get_car();
-	car.adjust_radio(radio.is_pressed());
+	car.adjust_radio(radio.is_pressed(), sleepiness / max_sleepiness);
 	
 	if (!radio.is_pressed()): return;
 	

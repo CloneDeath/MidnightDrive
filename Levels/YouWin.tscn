@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Levels/YouWin/YouWin.gd" type="Script" id=1]
 [ext_resource path="res://Levels/YouWin/Beach.vox" type="ArrayMesh" id=2]
+[ext_resource path="res://Levels/YouWin/Beach.ogg" type="AudioStream" id=3]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_energy = 2.0
@@ -26,4 +27,8 @@ transform = Transform( -1, 1.20753e-008, -1.48091e-007, -1.70658e-008, 0.980761,
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
+
+[node name="BeachSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 

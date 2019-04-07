@@ -15,6 +15,7 @@ var levels = [
 var current_level = 0;
 
 func _ready():
+	randomize();
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	start_level(0);
 
@@ -47,6 +48,7 @@ func player_lost():
 func player_won():
 	clear_level();
 	start_level(current_level + 1);
+	$Congrats.play();
 
 func restart_level():
 	start_level(current_level);

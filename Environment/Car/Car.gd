@@ -4,7 +4,7 @@ var steering_wheel = 0;
 
 func _process(_delta):
 	$Interior/SteeringWheel.rotation_degrees.z = steering_wheel;
-	$Audio.volume_db = abs(steering_wheel);
+	$Audio.volume_db = abs(steering_wheel)/2;
 	$Audio.pitch_scale = 1 + abs(steering_wheel / 16);
 
 func go_to_radio():
@@ -19,8 +19,8 @@ func go_to_window():
 func go_to_drive_from_window():
 	$Animation.play_backwards("ToWindow");
 
-func adjust_radio(enable):
-	$Interior/Radio.adjust_radio(enable);
+func adjust_radio(enable, sleepiness):
+	$Interior/Radio.adjust_radio(enable, sleepiness);
 
 func animation_is_playing():
 	return $Animation.is_playing();

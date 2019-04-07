@@ -25,13 +25,13 @@ extents = Vector2( 512, 238.601 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 244.87, 300 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 250, 300 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 390, 85 )
 
-[sub_resource type="ShaderMaterial" id=7]
+[sub_resource type="ShaderMaterial" id=8]
 shader = ExtResource( 7 )
 shader_param/sleepiness = 0.0
 shader_param/zoom_factor = 1.25
@@ -84,7 +84,7 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Input/GoToDriveFromWindow"]
 position = Vector2( 774, 300 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="Radio" type="Area2D" parent="Input"]
 editor/display_folded = true
@@ -92,7 +92,7 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Input/Radio"]
 position = Vector2( 532, 330 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Events" type="Node" parent="."]
 
@@ -112,7 +112,7 @@ editor/display_folded = true
 layer = 2
 
 [node name="Sleepiness" type="ColorRect" parent="SleepinessLayer"]
-material = SubResource( 7 )
+material = SubResource( 8 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_clip_content = true
